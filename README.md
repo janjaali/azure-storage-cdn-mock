@@ -7,7 +7,7 @@ The service provides a dynamic route matcher which accepts requests in the form 
 You may start the dockerized service via:
 
 ```shell
-docker run -p "8080:8080" -it janjaali/azure-storage-cdn-mock:0.1.0-SNAPSHOT
+docker run -p "8080:8080" -it ghashange/azure-storage-cdn-mock:0.1.0-SNAPSHOT
 ```
 
 To CDN mock service can be configured with the following environment variables:
@@ -50,10 +50,10 @@ To create a docker image that contains the main application, you can use the sbt
 sbt "app/docker:publishLocal"
 ```
 
-This will build and publish an image called "janjaali/azure-storage-cdn-mock:0.1.0". You can run the image via:
+This will build and publish an image called "ghashange/azure-storage-cdn-mock:0.1.0". You can run the image via:
 
 ```shell
-docker run -p "8080:8080" -it janjaali/azure-storage-cdn-mock:0.1.0
+docker run -p "8080:8080" -it ghashange/azure-storage-cdn-mock:0.1.0
 ```
 
 ### Test

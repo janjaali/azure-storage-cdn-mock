@@ -1,6 +1,6 @@
 ThisBuild / name := "azure-storage-cdn-mock"
 
-ThisBuild / organization := "janjaali"
+ThisBuild / organization := "ghashange"
 
 ThisBuild / version := "0.1.0"
 
