@@ -2,7 +2,7 @@ ThisBuild / name := "azure-storage-cdn-mock"
 
 ThisBuild / organization := "janjaali"
 
-ThisBuild / version := "1.0.0-SNAPSHOT"
+ThisBuild / version := "0.1.0"
 
 ThisBuild / licenses := Seq("MIT License" -> url("https://opensource.org/licenses/MIT"))
 
@@ -58,9 +58,25 @@ lazy val app = (project in file("app"))
       "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
 
       // tests
-      "org.scalatest" %% "scalatest" % "3.1.0" % Test
+      "org.scalatest" %% "scalatest" % "3.1.0" % Test,
+
+      // mocking
+      "org.scalamock" %% "scalamock" % "4.4.0" % Test,
+
+      // http
+      "com.typesafe.akka" %% "akka-http"   % "10.1.11",
+      "com.typesafe.akka" %% "akka-http-testkit" % "10.1.11" % Test,
+
+      // stream processing
+      "com.typesafe.akka" %% "akka-stream" % "2.6.4",
+      "com.typesafe.akka" %% "akka-stream-testkit" % "2.6.4" % Test,
+
+      // azure storage
+      "com.github.janjaali" %% "azure-storage-sdk-wrapper-for-scala" % "0.1.0-SNAPSHOT-2"
     ),
 
-    packageName in Docker := "janjaali/azure-storage-cdn-mock"
+    packageName in Docker := "janjaali/azure-storage-cdn-mock",
+
+    dockerExposedPorts ++= Seq(8080)
   )
   .enablePlugins(JavaAppPackaging)

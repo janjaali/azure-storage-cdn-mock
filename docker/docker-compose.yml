@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  azure-storage:
+    image: mcr.microsoft.com/azure-storage/azurite:3.6.0
+    container_name: azure-storage
+    ports:
+      - "10000:10000"
+    # command workaround until entrypoints are supported https://github.com/Azure/Azurite/issues/381.
+    command: "azurite --blobHost 0.0.0.0 --queueHost 0.0.0.0 --loose"
